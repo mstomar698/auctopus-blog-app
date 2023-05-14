@@ -1,18 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Fetchdata from './api/fetchdata';
-import Title from './api/title';
+import Articles from './screens/Articles';
+import Article from './screens/Article';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="items-center justify-center h-full flex flex-col flex-wrap">
-        <div>
-          some Data
+      <div className="">
+        <NavBar />
+        <div className="relative">
           <Routes>
-            <Route path="/" element={<Fetchdata />} />
-            <Route path="/photo/:id" element={<Title />} />
+            <Route path="/" element={<Articles />} />
+            <Route path="/photo/:id" element={<Article />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
